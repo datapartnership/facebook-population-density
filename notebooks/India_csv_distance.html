@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>&lt;no title&gt; &#8212; Project Template</title>
+    <title>Pre-requirements &#8212; Project Template</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -65,8 +65,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://datapartnership.org/notebooks/India_csv_distance.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="&lt;no title&gt;" />
-<meta property="og:description" content="" />
+<meta property="og:title"       content="Pre-requirements" />
+<meta property="og:description" content="Pre-requirements  1. Download and install QGIS  2. A Shapefile  The shapefile should end with the ‘.shp’ extension1. Download and install QGIS2. A Shapefile  Th" />
 <meta property="og:image"       content="https://datapartnership.org/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -183,6 +183,23 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/datapartnership/template/master?urlpath=tree/notebooks/India_csv_distance.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -192,7 +209,100 @@
             <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
-            <ul class="simple nav section-nav flex-column">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Pre-requirements
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#download-and-install-qgis">
+     1. Download and install QGIS
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-shapefile">
+     2. A Shapefile
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#instructions">
+   Instructions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#launch-the-qgis-application">
+     1. Launch the QGIS Application
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#click-on-the-new-empty-project-panel">
+     2. Click on the
+     <em>
+      New Empty Project
+     </em>
+     panel
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#using-the-browser-sidepanel-find-and-click-on-the-desired-shapefile">
+     3. Using the
+     <em>
+      Browser
+     </em>
+     sidepanel, find and click on the desired Shapefile
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#click-on-vectordata-management-toolssplit-vector-layer">
+     4. Click on
+     <em>
+      Vector→Data Management Tools→Split Vector Layer…
+     </em>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configure-the-split-vector-layer-tool-settings-and-click-run">
+     5. Configure the
+     <em>
+      Split Vector Layer
+     </em>
+     tool settings and click
+     <em>
+      Run
+     </em>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#once-the-split-vector-layer-tool-finishes-running-click-on-layeradd-layer-add-vector-layer">
+     6. Once the
+     <em>
+      Split Vector Layer
+     </em>
+     tool finishes running, click on
+     <em>
+      Layer→Add Layer →Add Vector Layer…
+     </em>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#configure-the-data-source-manager-accordingly">
+     7. Configure the
+     <em>
+      Data Source Manager
+     </em>
+     accordingly
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-selected-file-s-should-now-appear-as-a-new-layer">
+     8. The selected file(s) should now appear as a new layer
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -204,7 +314,228 @@
         
               <div>
                 
-  
+  <div class="section" id="pre-requirements">
+<h1>Pre-requirements<a class="headerlink" href="#pre-requirements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="download-and-install-qgis">
+<h2>1. <a class="reference external" href="https://qgis.org/en/site/forusers/download.html">Download</a> and install QGIS<a class="headerlink" href="#download-and-install-qgis" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="a-shapefile">
+<h2>2. A Shapefile<a class="headerlink" href="#a-shapefile" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The shapefile should end with the ‘.shp’ extension</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="instructions">
+<h1>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="launch-the-qgis-application">
+<h2>1. Launch the QGIS Application<a class="headerlink" href="#launch-the-qgis-application" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="click-on-the-new-empty-project-panel">
+<h2>2. Click on the <em>New Empty Project</em> panel<a class="headerlink" href="#click-on-the-new-empty-project-panel" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>This option is highlighted in red in the image below
+<img alt="Step2" src="notebooks/Steps/1.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="using-the-browser-sidepanel-find-and-click-on-the-desired-shapefile">
+<h2>3. Using the <em>Browser</em> sidepanel, find and click on the desired Shapefile<a class="headerlink" href="#using-the-browser-sidepanel-find-and-click-on-the-desired-shapefile" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Step3" src="notebooks/Steps/3.png" /></p>
+</div>
+<div class="section" id="click-on-vectordata-management-toolssplit-vector-layer">
+<h2>4. Click on <em>Vector→Data Management Tools→Split Vector Layer…</em><a class="headerlink" href="#click-on-vectordata-management-toolssplit-vector-layer" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Step4" src="../_images/4.png" /></p>
+</div>
+<div class="section" id="configure-the-split-vector-layer-tool-settings-and-click-run">
+<h2>5. Configure the <em>Split Vector Layer</em> tool settings and click <em>Run</em><a class="headerlink" href="#configure-the-split-vector-layer-tool-settings-and-click-run" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong><em>Input layer</em></strong> specifies what Layer is being used to generate the files</p></li>
+<li><p><strong><em>Unique ID field</em></strong> specifies the prefix for the generated files</p></li>
+<li><p><strong><em>Output directory</em></strong> is the directory which will contain the generated files
+<img alt="Step5" src="notebooks/Steps/5.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="once-the-split-vector-layer-tool-finishes-running-click-on-layeradd-layer-add-vector-layer">
+<h2>6. Once the <em>Split Vector Layer</em> tool finishes running, click on <em>Layer→Add Layer →Add Vector Layer…</em><a class="headerlink" href="#once-the-split-vector-layer-tool-finishes-running-click-on-layeradd-layer-add-vector-layer" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Step6" src="../_images/6.png" /></p>
+</div>
+<div class="section" id="configure-the-data-source-manager-accordingly">
+<h2>7. Configure the <em>Data Source Manager</em> accordingly<a class="headerlink" href="#configure-the-data-source-manager-accordingly" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Ensure that it is under the <em>Vector</em> tab is selected</p></li>
+<li><p>For the <strong><em>Source Type</em></strong> option, select <em>File</em></p></li>
+<li><p>Under <strong><em>Source</em></strong> navigate and select the generated file(s)
+<img alt="Step7" src="notebooks/Steps/7.png" /></p></li>
+</ul>
+</div>
+<div class="section" id="the-selected-file-s-should-now-appear-as-a-new-layer">
+<h2>8. The selected file(s) should now appear as a new layer<a class="headerlink" href="#the-selected-file-s-should-now-appear-as-a-new-layer" title="Permalink to this headline">¶</a></h2>
+<p><img alt="Step7" src="notebooks/Steps/8.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">haversine</span> <span class="kn">import</span> <span class="n">haversine</span><span class="p">,</span> <span class="n">Unit</span>
+<span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Polygon</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="k">as</span> <span class="nn">gpd</span>
+<span class="kn">import</span> <span class="nn">fiona</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="n">c9c842be264</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">haversine</span> <span class="kn">import</span> <span class="n">haversine</span><span class="p">,</span> <span class="n">Unit</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Polygon</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">csv</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;haversine&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;population_AS47_2018-10-01.csv&#39;</span><span class="p">)</span>
+<span class="c1">#df =  df.iloc[100000:]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">india_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;shapefiles/India_Districts_ADM2_GADM.shp&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">haversine</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find avg distance between consecutive points</span>
+<span class="n">sum_dist</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">prev_pt</span> <span class="o">=</span> <span class="n">p1</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+    <span class="n">pt</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">dist</span> <span class="o">=</span>  <span class="n">haversine</span><span class="p">(</span><span class="n">prev_pt</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">12</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="s2">&quot; ft&quot;</span><span class="p">)</span>
+    <span class="n">sum_dist</span> <span class="o">+=</span> <span class="n">dist</span>
+    <span class="n">prev_pt</span> <span class="o">=</span> <span class="n">pt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;avg_dist in feet: &quot;</span><span class="p">,</span> <span class="n">sum_dist</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># display shapefile</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">india_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4326&#39;</span><span class="p">}</span> <span class="c1"># coordinate reference system (long, lat)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converting lat and long in df to coordinate shapely Points </span>
+<span class="n">geometry</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">])]</span>
+<span class="n">geometry</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="c1">#dataset</span>
+                          <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">,</span> <span class="c1">#coordinate system</span>
+                          <span class="n">geometry</span><span class="o">=</span><span class="n">geometry</span><span class="p">)</span> <span class="c1"># specify geometry list</span>
+<span class="n">geo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot just a sliver of 18million points</span>
+<span class="n">lil_geo_df</span> <span class="o">=</span> <span class="n">geo_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10000</span><span class="p">:</span><span class="mi">30000</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<span class="n">india_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+<span class="n">geo_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">shp_lookup</span><span class="p">(</span><span class="n">shp_dir</span><span class="p">,</span> <span class="n">search_prop</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    function that returns name of shapefile (.shp) associated with a particualar field</span>
+<span class="sd">    If looking for shp by city, use</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        shp_dir : str</span>
+<span class="sd">            location of shapefiles to be searched</span>
+<span class="sd">        </span>
+<span class="sd">        search_prop : str</span>
+<span class="sd">            field to search for in shapefiles</span>
+<span class="sd">            (city: &#39;NAME_2&#39;)</span>
+<span class="sd">            (region/state: &#39;NAME_1&#39;)</span>
+<span class="sd">        </span>
+<span class="sd">        query : str</span>
+<span class="sd">            string to be searched for i.e. &#39;Delhi&#39;</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        str : filename of shapefile or None</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">shp_dir</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.shp&quot;</span><span class="p">):</span>
+            <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">shp_dir</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="n">search_prop</span><span class="p">]</span> <span class="o">==</span> <span class="n">query</span><span class="p">:</span>
+                    <span class="k">return</span> <span class="n">filename</span>
+    <span class="k">return</span> <span class="s2">&quot;None&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shp_lookup</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shapefiles/regions/&#39;</span><span class="p">,</span> <span class="s1">&#39;NAME_2&#39;</span><span class="p">,</span> <span class="s1">&#39;Delhi&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
