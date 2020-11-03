@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pre-requirements &#8212; Project Template</title>
+    <title>How to Work with Large Shapefiles and Geo datasets using QGIS and Python &#8212; Project Template</title>
     
   <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -53,7 +53,7 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://datapartnership.org/notebooks/India_csv_distance.html" />
+    <link rel="canonical" href="https://datapartnership.org/notebooks/Assignment1_nb.html" />
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -63,10 +63,10 @@
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://datapartnership.org/notebooks/India_csv_distance.html" />
+<meta property="og:url"         content="https://datapartnership.org/notebooks/Assignment1_nb.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Pre-requirements" />
-<meta property="og:description" content="Pre-requirements  1. Download and install QGIS  2. A Shapefile  The shapefile should end with the ‘.shp’ extension1. Download and install QGIS2. A Shapefile  Th" />
+<meta property="og:title"       content="How to Work with Large Shapefiles and Geo datasets using QGIS and Python" />
+<meta property="og:description" content="How to Work with Large Shapefiles and Geo datasets using QGIS and Python  This notebook will first demonstrate using QGIS to split Large Shapefiles based on sha" />
 <meta property="og:image"       content="https://datapartnership.org/_static/logo.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -145,7 +145,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/notebooks/India_csv_distance.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/notebooks/Assignment1_nb.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -165,10 +165,10 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/datapartnership/template/issues/new?title=Issue%20on%20page%20%2Fnotebooks/India_csv_distance.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/datapartnership/template/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Assignment1_nb.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
-        <a class="edit-button" href="https://github.com/datapartnership/template/edit/master/notebooks/India_csv_distance.ipynb"><button
+        <a class="edit-button" href="https://github.com/datapartnership/template/edit/master/notebooks/Assignment1_nb.ipynb"><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
     </div>
@@ -188,7 +188,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/datapartnership/template/master?urlpath=tree/notebooks/India_csv_distance.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/datapartnership/template/master?urlpath=tree/notebooks/Assignment1_nb.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -212,7 +212,12 @@
             <ul class="nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
-   Pre-requirements
+   How to Work with Large Shapefiles and Geo datasets using QGIS and Python
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pre-requirements-for-splitting-shapefiles">
+   Pre-requirements for Splitting Shapefiles
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h2 nav-item toc-entry">
@@ -303,6 +308,11 @@
    </li>
   </ul>
  </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-split-shapefiles">
+   Finding Split Shapefiles
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -314,15 +324,19 @@
         
               <div>
                 
-  <div class="section" id="pre-requirements">
-<h1>Pre-requirements<a class="headerlink" href="#pre-requirements" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="how-to-work-with-large-shapefiles-and-geo-datasets-using-qgis-and-python">
+<h1>How to Work with Large Shapefiles and Geo datasets using QGIS and Python<a class="headerlink" href="#how-to-work-with-large-shapefiles-and-geo-datasets-using-qgis-and-python" title="Permalink to this headline">¶</a></h1>
+<p>This notebook will first demonstrate using QGIS to split Large Shapefiles based on shapfeile metadata. Then it will give the code neccessary to take a Geo located dataset containing latitude and longitude coordinates and create a data framework for doing analysis using both of these methods.</p>
+</div>
+<div class="section" id="pre-requirements-for-splitting-shapefiles">
+<h1>Pre-requirements for Splitting Shapefiles<a class="headerlink" href="#pre-requirements-for-splitting-shapefiles" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="download-and-install-qgis">
 <h2>1. <a class="reference external" href="https://qgis.org/en/site/forusers/download.html">Download</a> and install QGIS<a class="headerlink" href="#download-and-install-qgis" title="Permalink to this headline">¶</a></h2>
 </div>
 <div class="section" id="a-shapefile">
 <h2>2. A Shapefile<a class="headerlink" href="#a-shapefile" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>The shapefile should end with the ‘.shp’ extension</p></li>
+<li><p>The shapefile should end with the ‘.shp’ extension and contain other meta files in the same directory (<code class="docutils literal notranslate"><span class="pre">.shx</span></code>, <code class="docutils literal notranslate"><span class="pre">.dbj</span></code>, etc.) these will vary file to file.</p></li>
 </ul>
 </div>
 </div>
@@ -335,16 +349,16 @@
 <h2>2. Click on the <em>New Empty Project</em> panel<a class="headerlink" href="#click-on-the-new-empty-project-panel" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p>This option is highlighted in red in the image below
-<img alt="Step2" src="notebooks/Steps/1.png" /></p></li>
+<img alt="1.PNG" src="notebooks/attachment:1.PNG" /></p></li>
 </ul>
 </div>
 <div class="section" id="using-the-browser-sidepanel-find-and-click-on-the-desired-shapefile">
 <h2>3. Using the <em>Browser</em> sidepanel, find and click on the desired Shapefile<a class="headerlink" href="#using-the-browser-sidepanel-find-and-click-on-the-desired-shapefile" title="Permalink to this headline">¶</a></h2>
-<p><img alt="Step3" src="notebooks/Steps/3.png" /></p>
+<p><img alt="3.PNG" src="notebooks/attachment:3.PNG" /></p>
 </div>
 <div class="section" id="click-on-vectordata-management-toolssplit-vector-layer">
 <h2>4. Click on <em>Vector→Data Management Tools→Split Vector Layer…</em><a class="headerlink" href="#click-on-vectordata-management-toolssplit-vector-layer" title="Permalink to this headline">¶</a></h2>
-<p><img alt="Step4" src="../_images/4.png" /></p>
+<p><img alt="4.png" src="notebooks/attachment:4.png" /></p>
 </div>
 <div class="section" id="configure-the-split-vector-layer-tool-settings-and-click-run">
 <h2>5. Configure the <em>Split Vector Layer</em> tool settings and click <em>Run</em><a class="headerlink" href="#configure-the-split-vector-layer-tool-settings-and-click-run" title="Permalink to this headline">¶</a></h2>
@@ -352,7 +366,7 @@
 <li><p><strong><em>Input layer</em></strong> specifies what Layer is being used to generate the files</p></li>
 <li><p><strong><em>Unique ID field</em></strong> specifies the prefix for the generated files</p></li>
 <li><p><strong><em>Output directory</em></strong> is the directory which will contain the generated files
-<img alt="Step5" src="notebooks/Steps/5.png" /></p></li>
+<img alt="5.png" src="notebooks/attachment:5.png" /></p></li>
 </ul>
 </div>
 <div class="section" id="once-the-split-vector-layer-tool-finishes-running-click-on-layeradd-layer-add-vector-layer">
@@ -382,7 +396,6 @@
 <span class="kn">import</span> <span class="nn">fiona</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
-
 <span class="o">%</span><span class="k">matplotlib</span> inline
 </pre></div>
 </div>
@@ -390,7 +403,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">0</span><span class="n">c9c842be264</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">89</span><span class="n">bd1c9db29e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">haversine</span> <span class="kn">import</span> <span class="n">haversine</span><span class="p">,</span> <span class="n">Unit</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">shapely.geometry</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Polygon</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -404,39 +417,16 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;population_AS47_2018-10-01.csv&#39;</span><span class="p">)</span>
-<span class="c1">#df =  df.iloc[100000:]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Convert CSV file with geo located points to DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;population_AS47_2018-10-01.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">india_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;shapefiles/India_Districts_ADM2_GADM.shp&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">haversine</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find avg distance between consecutive points</span>
-<span class="n">sum_dist</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">prev_pt</span> <span class="o">=</span> <span class="n">p1</span>
-<span class="n">n</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-    <span class="n">pt</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">][</span><span class="n">i</span><span class="p">])</span>
-    <span class="n">dist</span> <span class="o">=</span>  <span class="n">haversine</span><span class="p">(</span><span class="n">prev_pt</span><span class="p">,</span> <span class="n">pt</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">)</span> <span class="o">/</span> <span class="mi">12</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="s2">&quot; ft&quot;</span><span class="p">)</span>
-    <span class="n">sum_dist</span> <span class="o">+=</span> <span class="n">dist</span>
-    <span class="n">prev_pt</span> <span class="o">=</span> <span class="n">pt</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;avg_dist in feet: &quot;</span><span class="p">,</span> <span class="n">sum_dist</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read Shapefile</span>
+<span class="n">india_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="s2">&quot;shapefiles/India_Districts_ADM2_GADM.shp&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -449,51 +439,203 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/Assignment1_nb_6_1.png" src="../_images/Assignment1_nb_6_1.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4326&#39;</span><span class="p">}</span> <span class="c1"># coordinate reference system (long, lat)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define coordinate System</span>
+<span class="n">crs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;init&#39;</span><span class="p">:</span> <span class="s1">&#39;epsg:4326&#39;</span><span class="p">}</span> <span class="c1"># coordinate reference system (long, lat)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>population_2015</th>
+      <th>population_2020</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23.90625</td>
+      <td>67.717917</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>23.90625</td>
+      <td>67.718194</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>23.90625</td>
+      <td>67.720139</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.90625</td>
+      <td>67.720417</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>23.90625</td>
+      <td>67.720972</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># converting lat and long in df to coordinate shapely Points </span>
 <span class="n">geometry</span> <span class="o">=</span> <span class="p">[</span><span class="n">Point</span><span class="p">(</span><span class="n">xy</span><span class="p">)</span> <span class="k">for</span> <span class="n">xy</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;longitude&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;latitude&#39;</span><span class="p">])]</span>
-<span class="n">geometry</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;shapely.geometry.point.Point at 0x7fcbba1f1af0&gt;,
+ &lt;shapely.geometry.point.Point at 0x7fcbba1fa610&gt;,
+ &lt;shapely.geometry.point.Point at 0x7fcbb9ca9a30&gt;]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">geo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="c1">#dataset</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># instantiate GeoDataFrame</span>
+<span class="n">geo_df</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">GeoDataFrame</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="c1">#dataset</span>
                           <span class="n">crs</span><span class="o">=</span><span class="n">crs</span><span class="p">,</span> <span class="c1">#coordinate system</span>
                           <span class="n">geometry</span><span class="o">=</span><span class="n">geometry</span><span class="p">)</span> <span class="c1"># specify geometry list</span>
 <span class="n">geo_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>latitude</th>
+      <th>longitude</th>
+      <th>population_2015</th>
+      <th>population_2020</th>
+      <th>geometry</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>23.90625</td>
+      <td>67.717917</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+      <td>POINT (67.71792 23.90625)</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>23.90625</td>
+      <td>67.718194</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+      <td>POINT (67.71819 23.90625)</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>23.90625</td>
+      <td>67.720139</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+      <td>POINT (67.72014 23.90625)</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>23.90625</td>
+      <td>67.720417</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+      <td>POINT (67.72042 23.90625)</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>23.90625</td>
+      <td>67.720972</td>
+      <td>13.270396</td>
+      <td>14.558465</td>
+      <td>POINT (67.72097 23.90625)</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot just a sliver of 18million points</span>
-<span class="n">lil_geo_df</span> <span class="o">=</span> <span class="n">geo_df</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">10000</span><span class="p">:</span><span class="mi">30000</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot GeoDataFrame with points onto shapefile</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">15</span><span class="p">))</span>
 <span class="n">india_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span> <span class="o">=</span> <span class="n">ax</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
 <span class="n">geo_df</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
 </div>
+<img alt="../_images/Assignment1_nb_10_1.png" src="../_images/Assignment1_nb_10_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="finding-split-shapefiles">
+<h1>Finding Split Shapefiles<a class="headerlink" href="#finding-split-shapefiles" title="Permalink to this headline">¶</a></h1>
+<p>After splitting a larger shapefile into smaller shapefiles, QGIS will use an arbitrary numbering system when saving these files. If your shapefile contains a large amount of data finding individual shapefiles can be quite tedious. The function below allows a user to search for shapefiles by property (attribute) and query. To check your shapefile’s properties (attributes) in QGIS, right click on the file (.shp) and click <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Attribute</span> <span class="pre">Table</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">shp_lookup</span><span class="p">(</span><span class="n">shp_dir</span><span class="p">,</span> <span class="n">search_prop</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
@@ -514,14 +656,14 @@
 <span class="sd">            string to be searched for i.e. &#39;Delhi&#39;</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        str : filename of shapefile or None</span>
+<span class="sd">        str : filename of shapefile</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">shp_dir</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">filename</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">&quot;.shp&quot;</span><span class="p">):</span>
             <span class="k">with</span> <span class="n">fiona</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">shp_dir</span> <span class="o">+</span> <span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">src</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">src</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;properties&#39;</span><span class="p">][</span><span class="n">search_prop</span><span class="p">]</span> <span class="o">==</span> <span class="n">query</span><span class="p">:</span>
                     <span class="k">return</span> <span class="n">filename</span>
-    <span class="k">return</span> <span class="s2">&quot;None&quot;</span>
+    <span class="k">return</span> <span class="s2">&quot;No shapefile exists&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -531,6 +673,10 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shp_lookup</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;shapefiles/regions/&#39;</span><span class="p">,</span> <span class="s1">&#39;NAME_2&#39;</span><span class="p">,</span> <span class="s1">&#39;Delhi&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;NAME_2_145.shp&#39;
+</pre></div>
 </div>
 </div>
 </div>
