@@ -375,6 +375,36 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">filter_dataframe</span><span class="p">(</span><span class="n">dataframe</span><span class="p">,</span> <span class="n">search_col</span><span class="p">,</span> <span class="n">query</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Filters a pandas dataframe and returns a new dataframe based</span>
+<span class="sd">    on a query.</span>
+<span class="sd">    </span>
+<span class="sd">    Args:</span>
+<span class="sd">        dataframe : pandas dataframe</span>
+<span class="sd">            Unfiltered pandas dataframe.</span>
+<span class="sd">        </span>
+<span class="sd">        search_col : str</span>
+<span class="sd">            Column field we are filtering by.</span>
+<span class="sd">            ex. &#39;State/UnionTerritory&#39; for covid_19_india.csv</span>
+<span class="sd">        </span>
+<span class="sd">        query : str</span>
+<span class="sd">            value to be searched for i.e. &#39;Tripura.&#39;</span>
+<span class="sd">        </span>
+<span class="sd">    Returns:</span>
+<span class="sd">        dataframe : New dataframe filtered by the column field</span>
+<span class="sd">                    and query.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">conditional</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">search_col</span><span class="p">]</span> <span class="o">==</span> <span class="n">query</span>
+    <span class="n">filtered</span> <span class="o">=</span> <span class="n">dataframe</span><span class="p">[</span><span class="n">conditional</span><span class="p">]</span>
+    
+    <span class="k">return</span> <span class="n">filtered</span>
+</pre></div>
+</div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
