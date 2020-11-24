@@ -439,7 +439,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">three_dimensional_histogram</span><span class="p">(</span><span class="n">longitudes</span><span class="p">,</span> <span class="n">latitudes</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">lbound</span><span class="p">,</span> <span class="n">ubound</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">three_dimensional_histogram</span><span class="p">(</span><span class="n">longitudes</span><span class="p">,</span> <span class="n">latitudes</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">lbound</span><span class="p">,</span> <span class="n">ubound</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">zaxis</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Creates and plots a 3D histogram plot, overlayed</span>
 <span class="sd">    on a map of India based on our data.</span>
@@ -448,6 +448,11 @@
 <span class="sd">        longitudes: numpy array of floats</span>
 <span class="sd">        latitudes:  numpy array of floats</span>
 <span class="sd">        data:       numpy array of floats</span>
+<span class="sd">        lbound:     float, lower-bound of data values</span>
+<span class="sd">        ubound:     float, upper-bound of data values</span>
+<span class="sd">        title:      str representing the plot title</span>
+<span class="sd">        zaxis:      str representing the z-axis label</span>
+<span class="sd">        </span>
 <span class="sd">    Returns:</span>
 <span class="sd">        Void</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -459,7 +464,9 @@
     <span class="n">ax</span> <span class="o">=</span> <span class="n">Axes3D</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_autoscale_on</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_autoscalez_on</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">title</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_zbound</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="n">lbound</span><span class="p">,</span> <span class="n">upper</span><span class="o">=</span><span class="n">ubound</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="n">zaxis</span><span class="p">)</span>
     
     <span class="c1"># Draw the coastline and the country</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">add_collection3d</span><span class="p">(</span><span class="nb">map</span><span class="o">.</span><span class="n">drawcoastlines</span><span class="p">(</span><span class="n">linewidth</span><span class="o">=</span><span class="mf">0.25</span><span class="p">))</span>
@@ -474,36 +481,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">three_dimensional_histogram</span><span class="p">(</span><span class="n">Lons</span><span class="p">,</span> <span class="n">Lats</span><span class="p">,</span> <span class="n">InfectionRatio</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">three_dimensional_histogram</span><span class="p">(</span><span class="n">Lons</span><span class="p">,</span> <span class="n">Lats</span><span class="p">,</span> <span class="n">InfectionRatio</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">,</span><span class="s1">&#39;Confirmed Cases vs. Tests Conducted in Each State&#39;</span><span class="p">,</span><span class="s1">&#39;Confirmed Cases / Tests Conducted&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/3D_Histogram_11_0.png" src="../_images/3D_Histogram_11_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Lons</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Lats</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[93.1672562  79.91865458 94.46107028 92.69324123 85.71088199 76.75872594
- 82.09172301 72.46704838 77.12804403 73.87423677 72.17092026 76.51933832
- 77.05480118 75.32212765 85.80543164 76.14231992 76.23734556  0.
- 78.1635886  76.07102028 93.86810477 91.22338148 92.81385018 94.40193691
- 84.65198213 79.29135826 75.49340719 74.80356148 88.45612266 78.60428372
-  0.         91.78616496 80.58299401 79.15719961 88.12370381]
-[10.10893065 16.7441338  27.90088815 26.30595702 25.6792638  30.74259418
- 21.47285231 20.39689031 28.64594392 15.37199871 22.29733769 29.26694172
- 31.6660225  33.62030748 23.79916744 14.38511635 10.3824112   0.
- 23.61710899 19.47773147 24.70678248 25.51492016 23.29750741 26.08285373
- 20.4829773  12.86951984 30.82277375 26.25778912 27.43095507 10.88647901
-  0.         23.7237844  26.95010859 30.03411005 23.89190615]
-</pre></div>
-</div>
 </div>
 </div>
 <div class="cell docutils container">
@@ -516,13 +499,13 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Population Density - From 2011</span>
-<span class="n">three_dimensional_histogram</span><span class="p">(</span><span class="n">Lons</span><span class="p">,</span> <span class="n">Lats</span><span class="p">,</span> <span class="n">PopulationDensity</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">12000.0</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Population Density per State - From 2011</span>
+<span class="n">three_dimensional_histogram</span><span class="p">(</span><span class="n">Lons</span><span class="p">,</span> <span class="n">Lats</span><span class="p">,</span> <span class="n">PopulationDensity</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">12000.0</span><span class="p">,</span> <span class="s1">&#39;Population Density of Each State (2011)&#39;</span><span class="p">,</span> <span class="s1">&#39;(per sq.km)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3D_Histogram_14_0.png" src="../_images/3D_Histogram_14_0.png" />
+<img alt="../_images/3D_Histogram_13_0.png" src="../_images/3D_Histogram_13_0.png" />
 </div>
 </div>
 
